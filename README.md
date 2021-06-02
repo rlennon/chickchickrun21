@@ -131,7 +131,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
     <Slack, Teams, Email -pick one tool> is the preferred method of communication.
     Communication in this order: <as above - tools and order of preference>
     If a demonstration is required use <tool>, record the session and upload to the Slack channel.
-    No Slack communications between "<Time and Timezone>".
+    Slack communications between "7 PM - 9 PM Ireland Time".
     Raise a problem as soon as you see it.
     Respect each other and understand differences in knowledge.
     All team documents are to be created using Markdown language and shared on GitHub.
