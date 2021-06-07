@@ -18,9 +18,18 @@ ChickChickRun Assignment
 
 ## Preamble
 
-This is the online repository for the <fill in assignment name> assignment. 
-<fill in executive summary here>
+This is the online repository for the ChickChickRun assignment. 
 
+## Sumary 
+
+The customer would like an on-boarding system for their employees. ChickChickRun is an engineering
+and tech company. Their most popular product is a browser. The system must take details of the
+employee skills to map them to the training requirements. For example, if the new staff member has
+not completed Agile training they must do so as it is mandatory. The system should be clean and
+simple. The system needs to take into account the usual security requirements. It must be possible to
+upload files or images which may be images of certificates for courses completed. Jpgs are fine. The
+administrator should be able to access detailed information and edit as appropriate. Once the client
+enters details it should not be able to be changed by the client
 
 Our product will be delivered using an Agile methodology that embraces the DevOps culture. Please note that our culture embraces change and these documents are treated as living, breathing artefacts that will be continuously updated.
 
@@ -28,7 +37,13 @@ Our product will be delivered using an Agile methodology that embraces the DevOp
 Ruth G. Lennon
 
 ### Rockstars
-<Add your name here>
+Akhilesh Sasimohan
+Eyituoyo George Ikomi
+Jomy Jose
+Juarez Alvares Barbosa Junior
+Maria Pavlova
+Jorge Racionero
+Miguel Pinar 
 
 ## Project Deadline
 
@@ -157,7 +172,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Sprints will start <day, time & timezone>.
     The Scrum Master role rotates each week, the schedule is available on the on the process section
     <tool> will be used for task management and planning.
-    Each member of the team will work <realistic number of hours> per week, unless they are on vacation.
+    Each member of the team will work 7 per week, unless they are on vacation.
 
 ### Branching Strategy
 <decide on one here>
