@@ -37,8 +37,8 @@ Our product will be delivered using an Agile methodology that embraces the DevOp
 Ruth G. Lennon
 
 ### Rockstars
-Akhilesh Sasimohan
-Eyituoyo George Ikomi
+        Akhilesh Sasimohan
+        Eyituoyo George Ikomi
 Jomy Jose
 Juarez Alvares Barbosa Junior
 Maria Pavlova
