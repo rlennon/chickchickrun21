@@ -39,11 +39,11 @@ Ruth G. Lennon
 ### Rockstars
         Akhilesh Sasimohan
         Eyituoyo George Ikomi
-Jomy Jose
-Juarez Alvares Barbosa Junior
-Maria Pavlova
-Jorge Racionero
-Miguel Pinar 
+        Jomy Jose
+        Juarez Alvares Barbosa Junior
+        Maria Pavlova
+        Jorge Racionero
+        Miguel Pinar 
 
 ## Project Deadline
 
@@ -65,8 +65,8 @@ Refer to BB for deadlines
 
 ## Useful Links
 
-    Project Slack: 
-    GitHub: 
+    Project Slack: https://lyit.slack.com/archives/C023TM3FRS6
+    GitHub: https://github.com/rlennon/chickchickrun21
     
 
 For more information visit our other sections
@@ -124,10 +124,10 @@ These are the current Risks on the project, re-aligned on a weekly basis
 
 ### Meetings
 
-    Stand-ups will occur on <date, time and timezone>.
+    Stand-ups will occur on Mondays, 7.30 PM UTC (automated) and Wednesdays, 7 PM UTC (presential).
     The order that people give their updates will be based on alphabetical order of those present at the meeting.
     Updates will be in the form: What I've done, Implediments, What I plan to do
-    Sprint planning will occur every other <day & time>.
+    Sprint planning will occur every other Wednesdays 7PM UTC.
     Please add and update items within Jira prior to the sprint planning session.
     Sprint retro will occur <frequency, date & time>.
     The order that people present their sprint retro updates will be based on <sample: alphabetical> order of those present at the meeting.
