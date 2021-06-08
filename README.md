@@ -131,9 +131,9 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Please add and update items within Jira prior to the sprint planning session.
     Sprint retro will occur <frequency, date & time>.
     The order that people present their sprint retro updates will be based on <sample: alphabetical> order of those present at the meeting.
-    Points raised in the sprint retro will be noted and posted on the slack channel by the <who: example Scrum Master>.
+    Points raised in the sprint retro will be noted and posted on the slack channel by the Scrum Master.
     Backlog refinement?
-    Task estimation will be done using <fill in>. 
+    Task estimation will be done using Pocker Planner. 
     Come prepared to meetings.
     Be on time for Stand Ups and meetings.
     Mobile phones on silent.
@@ -143,8 +143,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
 
 ### Communication
 
-    <Slack, Teams, Email -pick one tool> is the preferred method of communication.
-    Communication in this order: <as above - tools and order of preference>
+    Slack is the preferred method of communication.
     If a demonstration is required use <tool>, record the session and upload to the Slack channel.
     Slack communications between "7 PM - 9 PM Irish Time".
     Raise a problem as soon as you see it.
@@ -175,10 +174,10 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Each member of the team will work 7 per week, unless they are on vacation.
 
 ### Branching Strategy
-<decide on one here>
+One branch per task & per team member 
   
 ### Estimating Story Points
 
-The teams team's velocity is calculated by <specify how>
+The teams team's velocity is calculated by using Pocker Planner
 
 The teams current story point velocity is "<Choose the number!>".
