@@ -89,12 +89,10 @@ Project Log 	Team log for the project
 
 These are the current Risks on the project, re-aligned on a weekly basis
 <pick from the sample sections below and add your own>
-    Infrastructure proving to be a real problem, may block being able to release software
     Team is finding itself to be running short on time due to other work and study commitments
     No PO feedback on software
     Unknown technology choices has led to a lot of upskilling required
     Changing / ambiguous requirements
-    Talk of the company being bought out has raised concerns
     Lack of rights for toolsets chosen has hindered progress and ability to deliver
 
 ## Tenants of Design
@@ -104,19 +102,23 @@ These are the current Risks on the project, re-aligned on a weekly basis
         code coverage tool used
         Secure code: Regex for cleansing and validation, Named queries and database triggers
         performance testing tool to be used
-    Documentation / code commenting (javadoc)/seperate branch
+    Documentation / code commenting <decide the tool here>/seperate branch
     Datastore for persistance
     Testing:
         Unit testing
         integretation testing
         UA
+        security
     Environments:
         staging and production
         tight configuration management for consistency and reproducibility
         automated creation and deployments
         integrated and automated pipeline (commit -> test -> deploy)
     Github version control:
-        branches used
+        branches used:
+                main
+                something
+                somethingElse
         version/release management
     Agile project management methods/principles (jira)
 
@@ -127,12 +129,12 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Stand-ups will occur on Mondays, 7.30 PM UTC (automated) and Wednesdays, 7 PM UTC (presential).
     The order that people give their updates will be based on alphabetical order of those present at the meeting.
     Updates will be in the form: What I've done, Implediments, What I plan to do
-    Sprint planning will occur every other Wednesdays 7PM UTC.
-    Please add and update items within Jira prior to the sprint planning session.
-    Sprint retro will occur <frequency, date & time>.
-    The order that people present their sprint retro updates will be based on <sample: alphabetical> order of those present at the meeting.
+    Sprint planning will occur every <Friday 8:00 PM Irish Time>.
+    Please add and update items within <open discussion> prior to the sprint planning session.
+    Sprint retro will occur <Friday 7:30 PM Irish Time>.
+    The order that people present their sprint retro updates will be based on sample: reverse alphabetical order of those present at the meeting.
     Points raised in the sprint retro will be noted and posted on the slack channel by the Scrum Master.
-    Backlog refinement?
+    Backlog refinement? Where, when, how....
     Task estimation will be done using Pocker Planner. 
     Come prepared to meetings.
     Be on time for Stand Ups and meetings.
@@ -144,7 +146,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
 ### Communication
 
     Slack is the preferred method of communication.
-    If a demonstration is required use <tool>, record the session and upload to the Slack channel.
+    If a demonstration is required use <???>, record the session and upload to the Slack channel.
     Slack communications between "7 PM - 9 PM Irish Time".
     Raise a problem as soon as you see it.
     Respect each other and understand differences in knowledge.
@@ -173,6 +175,10 @@ These are the current Risks on the project, re-aligned on a weekly basis
     <tool> will be used for task management and planning.
     Each member of the team will work 7 per week, unless they are on vacation.
 
+### Scrum Master 
+    Wk 1  Name
+    Wk 2  Name
+            
 ### Branching Strategy
 One branch per task & per team member 
   
