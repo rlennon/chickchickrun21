@@ -49,26 +49,36 @@ Ruth G. Lennon
 
 Refer to BB for deadlines
   
-## Project Specification
-<team must agree specifications here - below are samples for discussion purposes>    
-    Clean and simple design
+## Project Specification  
+    Clean and simple design using draw.io (https://app.diagrams.net/)
     User access levels (client, administrator)
     Includes at least one self developed api and one webservice
-    To be run over <specify platform>
-
-    Frameworks
-    Database
-    Database persistence technology
-    Define the buisness Requirements
+    To be run over Azure
+    Frameworks : Terraform and Python 
+    Database : Microsoft SQL
+    Database persistence technology : Azure Backup
+    Define the business Requirements : 
+        - The system must take details of the employee skills to 
+        - Map the skills to the training requirements
+        - The system should be clean and simple
+        - The system needs to take into account the usual security requirements
+        - The system should be able to store uploaded files and images
+        - The administrator should be able to access detailed information and edit as appropriate
+        - Once the client enters details it should not be able to be changed by the client
     Named queries and database triggers for security
+        - This point requires further research. 
+        https://docs.microsoft.com/en-us/sql/relational-databases/triggers/manage-trigger-security?view=sql-server-ver15
+
     Regex for cleansing and validation of data before sending to the database.
 
 ## Useful Links
 
-    Project Slack: https://lyit.slack.com/archives/C023TM3FRS6
-    GitHub: https://github.com/rlennon/chickchickrun21
-    
+    Project Slack   : https://lyit.slack.com/archives/C023TM3FRS6
+    GitHub          : https://github.com/rlennon/chickchickrun21
+    Jira Project    : https://studentjira.lyit.ie/secure/Dashboard.jspa
+    Confluence      : 
 
+    
 For more information visit our other sections
 <pick from the sample sections below and add your own>
 Section 	Description
@@ -101,14 +111,14 @@ These are the current Risks on the project, re-aligned on a weekly basis
         code Frameworks used
         code coverage tool used
         Secure code: Regex for cleansing and validation, Named queries and database triggers
-        performance testing tool to be used
-    Documentation / code commenting <decide the tool here>/seperate branch
-    Datastore for persistance
+        performance testing tool to be used : k6.io (https://k6.io/)
+    Documentation / code commenting /seperate branch
+    Datastore for persistance : Azure Storage Account (Versioning enabled)
     Testing:
-        Unit testing
-        integretation testing
-        UA
-        security
+        Unit testing : unittest (Python) / TFLINT (Terraform) 
+        integretation testing : pester 
+        UA : k6
+        security : sonarqube
     Environments:
         staging and production
         tight configuration management for consistency and reproducibility
@@ -117,8 +127,13 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Github version control:
         branches used:
                 main
-                something
-                somethingElse
+                Task1 
+                Task2
+                Task3
+                Task4
+                Task5
+                Task6
+                Task7
         version/release management
     Agile project management methods/principles (jira)
 
@@ -126,16 +141,16 @@ These are the current Risks on the project, re-aligned on a weekly basis
 
 ### Meetings
 
-    Stand-ups will occur on Mondays, 7.30 PM UTC (automated) and Wednesdays, 7 PM UTC (presential).
+    Stand-ups will occur on Mondays, 7.30 PM UTC (automated) and Wednesdays, 7 PM UTC (face-to-face).
     The order that people give their updates will be based on alphabetical order of those present at the meeting.
     Updates will be in the form: What I've done, Implediments, What I plan to do
-    Sprint planning will occur every <Friday 8:00 PM Irish Time>.
+    Sprint planning will occur every <Friday 8:30 PM Irish Time>.
     Please add and update items within <open discussion> prior to the sprint planning session.
-    Sprint retro will occur <Friday 7:30 PM Irish Time>.
+    Sprint retro will occur <Friday 8:00 PM Irish Time>.
     The order that people present their sprint retro updates will be based on sample: reverse alphabetical order of those present at the meeting.
     Points raised in the sprint retro will be noted and posted on the slack channel by the Scrum Master.
-    Backlog refinement? Where, when, how....
-    Task estimation will be done using Pocker Planner. 
+    Backlog refinement? BlackBoard, Fridays 7.30 PM Irish time, Scrum Master to review backlog items
+    Task estimation will be done using Poker Planner. 
     Come prepared to meetings.
     Be on time for Stand Ups and meetings.
     Mobile phones on silent.
@@ -146,7 +161,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
 ### Communication
 
     Slack is the preferred method of communication.
-    If a demonstration is required use <???>, record the session and upload to the Slack channel.
+    If a demonstration is required use Teams, record the session and upload to the Slack channel.
     Slack communications between "7 PM - 9 PM Irish Time".
     Raise a problem as soon as you see it.
     Respect each other and understand differences in knowledge.
@@ -158,7 +173,6 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Don’t interrupt and cut another person off while they are talking.
     Listen when someone is talking, don’t interject.
     Zero tolerance for bullying.
-    
     Agile way of working.
     If are assigned a job, take ownership of it and keep it up to date.
     Stick to your agreed working patterns. Let the team know when you are late or going early.
@@ -170,20 +184,29 @@ These are the current Risks on the project, re-aligned on a weekly basis
 
 ## Other
 
-    Sprints will start <day, time & timezone>.
+    Sprints will start <18th June 2021, 8 PM & Irish time>.
     The Scrum Master role rotates each week, the schedule is available on the on the process section
-    <tool> will be used for task management and planning.
-    Each member of the team will work 7 per week, unless they are on vacation.
+    Jira will be used for task management and planning.
+    Each member of the team will work 7h per week, unless they are on vacation.
+
 
 ### Scrum Master 
-    Wk 1  Name
-    Wk 2  Name
-            
+    Wk 1  Akhilesh Sasimohan
+    Wk 2  Eyituoyo George Ikomi
+    Wk 3  Maria Pavlova
+    Wk 4  Miguel Pinar
+    Wk 5  Jomy Jose
+    Wk 6  Jorge Racionero
+    Wk 7  Juarez Alvares Barbosa Junior
+           
 ### Branching Strategy
 One branch per task & per team member 
-  
+Pull & Rebase before triggering a Pull Request 
+Two people to review & approve each Pull Request
+
+
 ### Estimating Story Points
 
-The teams team's velocity is calculated by using Pocker Planner
+The teams team's velocity is calculated by using Poker Planner
 
 The teams current story point velocity is "<Choose the number!>".
