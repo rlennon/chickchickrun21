@@ -204,6 +204,23 @@ One branch per task & per team member
 Pull & Rebase before triggering a Pull Request 
 Two people to review & approve each Pull Request
 
+Branching Strategy to be used is Git flow and describes the following:
+
+1. Master/Main branch - This will only contain finished work. All releases
+will be taking place from this branch.
+
+2. Develop Branch - Work on any new or subsequent release occurs here, after
+which it is merged to the Master/Main branch once completed.
+
+3. Separate Feature branches to be used for all new features. To be used to
+keep track of ongoing development regarding a particular feature. On 
+completion, it will be merged to the Develop branch.
+
+4. In a situation where a bug with catastrophic consequencies/implications is
+discovered in production, a "hotfix" branch for the purpose of fixing the bug
+in question is created. On completion, this will then be merged to the Master/
+Main branch, and a new release for production is made. 
+
 
 ### Estimating Story Points
 
