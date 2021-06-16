@@ -75,7 +75,7 @@ Refer to BB for deadlines
 
     Project Slack   : https://lyit.slack.com/archives/C023TM3FRS6
     GitHub          : https://github.com/rlennon/chickchickrun21
-    Jira Project    : https://studentjira.lyit.ie/secure/Dashboard.jspa
+    Jira Project    : https://studentjira.lyit.ie/secure/RapidBoard.jspa?rapidView=76&projectKey=CCR
     Confluence      : 
 
     
