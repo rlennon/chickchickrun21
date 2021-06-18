@@ -115,7 +115,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Documentation / code commenting /seperate branch
     Datastore for persistance : Azure Storage Account (Versioning enabled)
     Testing:
-        Unit testing : unittest (Python) / TFLINT (Terraform) 
+        Unit testing : JUnit (Java) / TFLINT (Terraform) 
         integretation testing : pester 
         UA : k6
         security : sonarqube
