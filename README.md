@@ -54,7 +54,7 @@ Refer to BB for deadlines
     User access levels (client, administrator)
     Includes at least one self developed api and one webservice
     To be run over Azure
-    Frameworks : Terraform and Python 
+    Frameworks : Terraform and Java 
     Database : Microsoft SQL
     Database persistence technology : Azure Backup
     Define the business Requirements : 
