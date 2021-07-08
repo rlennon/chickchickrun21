@@ -1,0 +1,77 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 xmlns:c="http://java.sun.com/jsp/jstl/core"
+                 xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+                 xmlns:o="http://omnifaces.org/ui"
+                 >
+
+
+
+
+
+    <table>
+
+        <tr align="center">
+            <td>
+                <h:form enctype="multipart/form-data" id="petForm">
+                    <p:growl id="messages"/>
+
+                    <o:importConstants type="ie.lyit.ccr.util.CcrConstants" />
+
+                    <p:panelGrid id="petPanelGrid" columns="3" rendered="true" style="width:940px; min-width:940px; max-width:940px;">
+
+                        <f:facet name="header">
+                            #{msg.addPet}
+                        </f:facet>
+
+                        <h:outputLabel for="petType" value="#{msg.petType}"/>
+                        <p:selectOneMenu id="petType" value="#{petMB.petType}" required="false">
+                            <f:selectItem itemLabel="#{msg.dogs}" itemValue="#{PetTypeConstants.DOG_PET}" />
+                            <f:selectItem itemLabel="#{msg.cats}" itemValue="#{PetTypeConstants.CAT_PET}" />
+                            <f:selectItem itemLabel="#{msg.fishes}" itemValue="#{PetTypeConstants.FISH_PET}" />                          
+                            <f:selectItem itemLabel="#{msg.birds}" itemValue="#{PetTypeConstants.BIRD_PET}" />
+                            <f:selectItem itemLabel="#{msg.reptiles}" itemValue="#{PetTypeConstants.REPTILE_PET}" />                         
+                        </p:selectOneMenu>
+                        <!--  p:message for="petType" / -->
+
+                        <h:outputLabel for="petPhoto" value="#{msg.photo}"/>
+                        <p:fileUpload id="petPhoto"
+                                      fileUploadListener="#{petMB.handleFileUpload}"
+                                      allowTypes="/(\.|\/)(gif|jpe?g|png)$/" auto="true"
+                                      update="uploadMsg"
+                                      sizeLimit="524288" fileLimit="1"
+                                      invalidSizeMessage="#{msg.invalidSizeMessage}"
+                                      invalidFileMessage="#{msg.invalidFileMessage}"
+                                      fileLimitMessage="#{msg.fileLimitMessage}"
+                                      previewWidth="100" mode="advanced"
+                                      multiple="false"
+                                      />
+                        <p:growl id="uploadMsg"/>                      
+
+                        <h:outputLabel for="comments" value="#{msg.comments}" />
+                        <p:inputTextarea id="comments" rows="5" cols="30" counter="counter" maxlength="200"
+                                         value="#{petMB.comments}"
+                                         counterTemplate="{0} #{msg.charsRemaining}" autoResize="false"/>
+                        <h:outputText id="counter" />
+
+                    </p:panelGrid>
+                    <br/>
+                    <p:commandButton ajax="false" type="submit" value="#{msg.save}" action="#{petMB.savePet()}" update="@form" />
+                    <p:spacer width="20" height="20"/>
+                    <p:commandButton ajax="false" type="submit" immediate="true" value="#{msg.cancel}"
+                                     action="#{petMB.cancel()}" update="@form" />
+                    <br/>
+
+                </h:form>
+            </td>
+        </tr>
+    </table>
+
+
+
+</ui:composition>
