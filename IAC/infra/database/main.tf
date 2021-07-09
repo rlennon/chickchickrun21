@@ -4,7 +4,7 @@ resource "azurerm_postgresql_server" "CCR-DBSRV" {
   resource_group_name = var.Rgname
 
   administrator_login          = var.sqlaadmin
-  administrator_login_password = "H@Sh1CoR3!"
+  administrator_login_password = ""
 
   sku_name   = var.dbsku
   version    = var.dbversion
