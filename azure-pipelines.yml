@@ -11,5 +11,5 @@ steps:
     git pull –all
     git add .
     git commit -m "sync from azure devops"
-    git push https://$(git_token)@github.com/user_name/repo_name.git -f
+    git push https://$(git_token)@github.com/L00163034/chickchickrun21.git -f
   displayName: 'Run git sync'
