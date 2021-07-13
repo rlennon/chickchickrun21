@@ -20,7 +20,7 @@ ChickChickRun Assignment
 
 This is the online repository for the ChickChickRun assignment. 
 
-## Sumary 
+## Summary 
 
 The customer would like an on-boarding system for their employees. ChickChickRun is an engineering
 and tech company. Their most popular product is a browser. The system must take details of the
