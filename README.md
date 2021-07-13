@@ -55,7 +55,7 @@ Refer to BB for deadlines
     Includes at least one self developed api and one webservice
     To be run over Azure
     Frameworks : Terraform and Java 
-    Database : Microsoft SQL
+    Database : mySQL
     Database persistence technology : Azure Backup
     Define the business Requirements : 
         - The system must take details of the employee skills to 
