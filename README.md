@@ -20,7 +20,7 @@ ChickChickRun Assignment
 
 This is the online repository for the ChickChickRun assignment. 
 
-## Sumary 
+## Summary 
 
 The customer would like an on-boarding system for their employees. ChickChickRun is an engineering
 and tech company. Their most popular product is a browser. The system must take details of the
@@ -55,7 +55,7 @@ Refer to BB for deadlines
     Includes at least one self developed api and one webservice
     To be run over Azure
     Frameworks : Terraform and Java 
-    Database : Microsoft SQL
+    Database : mySQL
     Database persistence technology : Azure Backup
     Define the business Requirements : 
         - The system must take details of the employee skills to 

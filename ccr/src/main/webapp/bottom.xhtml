@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"	
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"	
+                 xmlns:c="http://java.sun.com/jsp/jstl/core"	
+                 xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+                 >
+
+    <h:form >     
+
+        <p:spacer width="30" height="20"/>
+        <h:outputText value="#{msg.petHelpApp}" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>       
+        <p:spacer width="80" height="20" />
+
+
+        <p:commandLink id="About" actionListener="#{linksMB.navigate()}" style="margin-right:20px;" ajax="false">  
+            <h:outputText value="#{msg.about}" style="font-family: Tahoma; font-size: 12px; font-style: bold" />  
+        </p:commandLink>  
+
+        <p:spacer width="20" height="20" />
+        <p:commandLink id="Help" actionListener="#{linksMB.navigate()}" style="margin-right:20px;" ajax="false">  
+            <h:outputText value="#{msg.help}" style="font-family: Tahoma; font-size: 12px; font-style: bold" />  
+        </p:commandLink>  
+
+        <p:spacer width="20" height="20" />
+        <p:commandLink id="Blog" actionListener="#{linksMB.navigate()}" style="margin-right:20px;" ajax="false">  
+            <h:outputText value="#{msg.blog}" style="font-family: Tahoma; font-size: 12px; font-style: bold" />  
+        </p:commandLink>  
+
+        <p:spacer width="20" height="20" />
+        <p:commandLink id="Mobile" actionListener="#{linksMB.navigate()}" style="margin-right:20px;" ajax="false">  
+            <h:outputText value="#{msg.mobile}" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>  
+        </p:commandLink>  
+
+        <p:spacer width="20" height="20" />
+        <p:commandLink id="Status" actionListener="#{linksMB.navigate()}" style="margin-right:20px;" ajax="false">  
+            <h:outputText value="#{msg.status}" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>  
+        </p:commandLink>  
+
+        <p:spacer width="20" height="20" />
+        <p:commandLink id="Terms" actionListener="#{linksMB.navigate()}" style="margin-right:20px;" ajax="false">  
+            <h:outputText value="#{terms}" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>  
+        </p:commandLink>  
+
+        <p:spacer width="20" height="20" />
+        <p:commandLink id="Privacy" actionListener="#{linksMB.navigate()}" style="margin-right:20px;" ajax="false">  
+            <h:outputText value="#{msg.privacySettings}" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>  
+        </p:commandLink>  
+
+        <p:spacer width="20" height="20" />
+        <p:commandLink id="Advertise" actionListener="#{linksMB.navigate()}" style="margin-right:20px;" ajax="false">  
+            <h:outputText value="#{msg.adverstiseHere}" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>  
+        </p:commandLink> 
+        
+                <p:spacer width="20" height="20" />
+        <p:commandLink id="ContactUs" actionListener="#{linksMB.navigate()}" style="margin-right:20px;" ajax="false">  
+            <h:outputText value="#{msg.contactUs}" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>  
+        </p:commandLink>  
+
+    </h:form>
+
+</ui:composition>
