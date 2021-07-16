@@ -73,11 +73,12 @@ Refer to BB for deadlines
 
 ## Useful Links
 
-    Project Slack   : https://lyit.slack.com/archives/C023TM3FRS6
-    GitHub          : https://github.com/rlennon/chickchickrun21
-    Jira Project    : https://studentjira.lyit.ie/secure/RapidBoard.jspa?rapidView=76&projectKey=CCR
-    Confluence      : 
-
+    Project Slack               : https://lyit.slack.com/archives/C023TM3FRS6
+    GitHub                      : https://github.com/rlennon/chickchickrun21
+    Azure DevOps Project        : https://dev.azure.com/miguelpinar/ChickChickRun21
+    Wiki Page                   : https://dev.azure.com/miguelpinar/ChickChickRun21/_wiki/wikis/ChickChickRun21.wiki/5/ChickChickRun21
+    
+    
     
 For more information visit our other sections
 <pick from the sample sections below and add your own>
@@ -98,7 +99,7 @@ Project Log 	Team log for the project
 ## Risk Register
 
 These are the current Risks on the project, re-aligned on a weekly basis
-<pick from the sample sections below and add your own>
+
     Team is finding itself to be running short on time due to other work and study commitments
     No PO feedback on software
     Unknown technology choices has led to a lot of upskilling required
@@ -135,7 +136,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
                 Task6
                 Task7
         version/release management
-    Agile project management methods/principles (jira)
+    Agile project management methods/principles (Azure DevOps)
 
 ## Social Contract
 
@@ -176,7 +177,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Agile way of working.
     If are assigned a job, take ownership of it and keep it up to date.
     Stick to your agreed working patterns. Let the team know when you are late or going early.
-    Keep JIRA board updated at all times.
+    Keep Azure DevOps board updated at all times.
     Update the Scrum Board as you progress the story i.e. don’t update at standup.
     Don't be afraid to ask for help.
     Don't be afraid to give constructive critism, as long as it is constructive.
