@@ -9,6 +9,6 @@ provider "azurerm" {
 # Swap the production slot and the staging slot
 resource "azurerm_app_service_active_slot" "slotDemoActiveSlot" {
   resource_group_name   = var.resource_group_name
-  app_service_name      = "slotAppService"
-  app_service_slot_name = "slotappServiceSlotOne"
+  app_service_name      = var.app_name
+  app_service_slot_name = "${var.app_name}-slot"
 }
