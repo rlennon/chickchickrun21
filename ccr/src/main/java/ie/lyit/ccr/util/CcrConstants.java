@@ -11,7 +11,7 @@ public class CcrConstants {
 	//JSF PAGES
 	public static final String MAIN = "main.xhtml";
 	public static final String ADD_PET = "addPet.xhtml";
-	public static final String MY_PETS = "myPets.xhtml";
+	public static final String MY_CERTIFICATES = "myCertificates.xhtml";
 	public static final String ADD_PET_SHOP = "addPetShop.xhtml";
 	public static final String SEARCH_RESULTS = "searchResults.xhtml";
 	public static final String EDIT_USER = "editUser.xhtml";

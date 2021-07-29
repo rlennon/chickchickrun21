@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dataSource>
-	  <server>localhost</server>
-	  <porta>27017</porta>
-	  <user>phUserApp</user>
-	  <passwd>111</passwd>  
-	  <database>pethelp</database>
-</dataSource>

@@ -12,15 +12,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 
-import org.compass.core.Compass;
-import org.compass.core.CompassException;
-import org.compass.core.CompassSession;
-import org.compass.core.CompassTransaction;
-import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.Morphia;
-
-import com.mongodb.Mongo;
-
 import ie.lyit.ccr.dao.UserRolesDAO;
 import ie.lyit.ccr.model.entities.UserRoles;
 import ie.lyit.ccr.util.CcrConstants;
@@ -36,16 +27,13 @@ public class UserRolesMB implements Serializable {
 
 	private static Logger logger = Logger
 			.getLogger(UserRolesMB.class.getName());
-	private Mongo mongoObj;
-	private Datastore morphiaDS;
-	private Morphia morphia;
-	private Compass compass;
+
 	private ServletContext servletContext;
 
 	private Long id;
 	private String userName;
 	private String roleName;
-	private CompassSession compassSession;
+
 
 	private UserRolesDAO userRolesDAO;
 
@@ -54,8 +42,7 @@ public class UserRolesMB implements Serializable {
 		servletContext = (ServletContext) FacesContext.getCurrentInstance()
 				.getExternalContext().getContext();
 
-		compass = (Compass) servletContext
-				.getAttribute(CcrConstants.COMPASS_CONNECTION);
+
 
 		userRolesDAO = new UserRolesDAO();
 	}
@@ -70,24 +57,9 @@ public class UserRolesMB implements Serializable {
 
 		boolean created = new UserRolesDAO().createUserRoles(newUserRole);
 
-		compassSession = compass.openSession();
-		CompassTransaction tx = null;
-		try {
-			tx = compassSession.beginTransaction();
-			compassSession.save(newUserRole);
-			tx.commit();
-		} catch (CompassException ce) {
-			ce.printStackTrace();
-			if (tx != null) {
-				tx.rollback();
-			}
-		}
+		
 
-		// final check for compass
-		if (!created || !tx.wasCommitted() || tx.wasRolledBack()) {
-			logger.severe("ERROR: Entity NOT PERSISTED due to MongoDB-Morphia or Compass issue!");
-		}
-		tx = null;
+	
 
 		return CcrConstants.MAIN;
 	}
@@ -95,20 +67,12 @@ public class UserRolesMB implements Serializable {
 	@Override
 	protected void finalize() throws Throwable {
 
-		if (compassSession != null && (!compassSession.isClosed())) {
-			compassSession.close();
-			compassSession = null;
-		}
-		return;
+	
 	}
 
 	@PreDestroy
 	public void releaseResources() {
-		if (this.compassSession != null && (!compassSession.isClosed())) {
-			compassSession.close();
-			compassSession = null;
-		}
-		return;
+	
 	}
 
 	/**

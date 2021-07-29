@@ -29,18 +29,13 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>petMB</managed-bean-name>
-		<managed-bean-class>ie.lyit.ccr.control.PetMB</managed-bean-class>
+		<managed-bean-name>certMB</managed-bean-name>
+		<managed-bean-class>ie.lyit.ccr.control.CertificateMB</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>postMB</managed-bean-name>
 		<managed-bean-class>ie.lyit.ccr.control.PostMB</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
-	<managed-bean>
-		<managed-bean-name>ringMB</managed-bean-name>
-		<managed-bean-class>ie.lyit.ccr.control.RingMB</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
@@ -61,6 +56,11 @@
 	<managed-bean>
 		<managed-bean-name>userRolesMB</managed-bean-name>
 		<managed-bean-class>ie.lyit.ccr.control.UserRolesMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>userCoursesMB</managed-bean-name>
+		<managed-bean-class>ie.lyit.ccr.control.UserCoursesMB</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 

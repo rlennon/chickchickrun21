@@ -1,5 +1,9 @@
 # Java files
 *.class
+
+# Exclude files in the maven target directory
+/target/**
+
 # Local .terraform directories
 **/.terraform/*
 
