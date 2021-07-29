@@ -26,7 +26,7 @@ import org.compass.core.CompassException;
 import org.compass.core.CompassSession;
 import org.compass.core.CompassTransaction;
 
-import ie.lyit.ccr.dao.PetDAO;
+//import ie.lyit.ccr.dao.CourseDAO;
 import ie.lyit.ccr.dao.UserDAO;
 import ie.lyit.ccr.model.entities.UserCourses;
 import ie.lyit.ccr.util.CcrConstants;
@@ -40,7 +40,7 @@ import ie.lyit.ccr.util.CcrConstants;
 @SessionScoped
 public class UserCoursesMB implements Serializable {
 
-	private static Logger logger = Logger.getLogger(UserMB.class.getName());
+	private static Logger logger = Logger.getLogger(UserCoursesMB.class.getName());
 
 	private List<UserCourses> userCourses;
 

@@ -10,11 +10,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 
-import org.compass.core.Compass;
-import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.Morphia;
 
-import com.mongodb.Mongo;
+
 
 import ie.lyit.ccr.util.CcrConstants;
 
@@ -26,11 +23,9 @@ import ie.lyit.ccr.util.CcrConstants;
 @RequestScoped
 public class SearchMB implements Serializable {
 
-    private static Logger logger = Logger.getLogger(PostMB.class.getName());
-    private Mongo mongoObj;
-    private Datastore morphiaDS;
-    private Morphia morphia;
-    private Compass compass;
+//    private static Logger logger = Logger.getLogger(PostMB.class.getName());
+
+ 
     private ServletContext servletContext;
     private String searchKey;
 
@@ -39,7 +34,7 @@ public class SearchMB implements Serializable {
         servletContext = (ServletContext) FacesContext
                 .getCurrentInstance().getExternalContext().getContext();
 
-        compass = (Compass) servletContext.getAttribute(CcrConstants.COMPASS_CONNECTION);
+ 
     }
 
     public SearchMB(String searchKey) {
@@ -48,7 +43,7 @@ public class SearchMB implements Serializable {
         servletContext = (ServletContext) FacesContext
                 .getCurrentInstance().getExternalContext().getContext();
 
-        compass = (Compass) servletContext.getAttribute(CcrConstants.COMPASS_CONNECTION);
+  
     }
 
     public String search() {

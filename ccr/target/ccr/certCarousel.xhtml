@@ -1,0 +1,114 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"	
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"	
+                 xmlns:c="http://java.sun.com/jsp/jstl/core"	
+                 xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+                 >
+
+    <h:form id="myPetsForm">            
+        <p:growl id="messages"/>
+
+        <table>           
+
+            <tr align="center">
+                <td>
+
+                    <p:carousel id="tabsCarouselPets" rendered="#{not empty certMB.myCollectionPets}"
+                                value="#{certMB.myCollectionPets}" var="pet"
+                                autoPlayInterval="5000" 
+                                itemStyle="height:250px;width:350px;" 
+                                effect="elasticBoth" circular="true">                        
+                        <f:facet name="header">  
+                            #{msg.myPets}
+                        </f:facet>  
+                        <p:tab>
+                            <h:panelGrid columns="2" cellpadding="10"> 
+                                <h:outputText id="name" 
+                                              value="#{certMB.selectedPet.name}" /> 
+                                -
+                                <h:outputText id="breed" 
+                                              value="#{certMB.selectedPet.breed}" /> 
+                                <br />
+                                <p:commandLink update=":myPetsForm:petDetail" oncomplete="selectedPetDlg.show()"
+                                               action="#{certMB.setSelectedPet(pet)}">
+                                    <p:graphicImage value="image/dynamic?id=#{pet.id}" />                           
+                                </p:commandLink>                                
+                            </h:panelGrid>
+                        </p:tab>
+                    </p:carousel>
+
+                    <p:dialog id="selectedPetDlg" 
+                              widgetVar="selectedPetDlg" showEffect="fade" 
+                              hideEffect="fade" 
+                              modal="true" width="600" height="300">
+
+                        <f:facet name="header">  
+                            #{certMB.selectedPet.name}
+                        </f:facet> 
+                        <p:outputPanel id="petDetail" style="text-align:center;" layout="block">
+
+                            <h:panelGrid  columns="2" cellpadding="10" rendered="#{not empty certMB.selectedPet}">
+                                <h:outputText id="dialogname" 
+                                              value="#{certMB.selectedPet.name}" />
+                                <p:graphicImage
+                                    value="image/dynamic?id=#{certMB.selectedPet.id}"
+                                    width="150" height="130"/>
+
+
+                                <h:outputLabel for="breed" value="Breed:" />
+                                <h:outputText id="breed" 
+                                              value="#{certMB.selectedPet.breed}" />
+
+                                <h:outputLabel for="gender" value="Gender:" />
+                                <h:outputText id="gender"
+                                              value="#{certMB.selectedPet.gender}" />
+
+                                <h:outputLabel for="age" value="Age:" />
+                                <h:outputText id="age"
+                                              value="#{certMB.selectedPet.age}" />
+
+                                <h:outputLabel for="pedigree" value="Pedigree:" />
+                                <h:outputText id="pedigree"
+                                              value="#{certMB.selectedPet.pedigree}" />
+
+                                <h:outputLabel for="mating" value="Mating:" />
+                                <h:outputText id="mating"
+                                              value="#{certMB.selectedPet.mating}" />
+
+                                <h:outputLabel for="petType" value="Pet Type:" />
+                                <h:outputText id="petType"
+                                              value="#{certMB.selectedPet.petType}" />
+
+                                <h:outputLabel for="comments" value="Comments:" />
+                                <h:outputText id="comments"
+                                              value="#{certMB.selectedPet.comments}" />
+
+                                <p:commandButton update="messages" value="#{msg.delete}" 
+                                                 action="#{certMB.deletePet(certMB.selectedPet)}" 
+                                                 onclick="selectedPetDlg.hide()">
+                                    <f:attribute name="pet" value="#{certMB.selectedPet}" />
+                                </p:commandButton> 
+
+
+                                <p:commandButton ajax="false" type="submit" immediate="true" 
+                                                 onclick="selectedPetDlg.hide()" value="#{msg.cancel}" 
+                                                 action="#{certMB.cancel()}" update="@form" />                   
+
+                            </h:panelGrid>  
+                        </p:outputPanel>
+
+                    </p:dialog>
+
+                </td>
+            </tr>
+
+
+
+        </table>
+    </h:form>
+
+</ui:composition>
