@@ -6,11 +6,11 @@ ie\lyit\ccr\model\entities\Course.class
 ie\lyit\ccr\model\entities\User.class
 ie\lyit\ccr\control\LinksMB.class
 ie\lyit\ccr\control\UserRolesMB.class
+ie\lyit\ccr\util\HibernateUtil.class
 ie\lyit\ccr\control\UserCoursesMB.class
 ie\lyit\ccr\control\listeners\CcrServletContextListener.class
 ie\lyit\ccr\control\SearchMB.class
 ie\lyit\ccr\util\PetTypeConstants.class
-ie\lyit\ccr\control\CertificateMB.class
 ie\lyit\ccr\control\PetHelpFrontController.class
 ie\lyit\ccr\control\MenuBarMB.class
 ie\lyit\ccr\control\Registration.class
@@ -23,6 +23,7 @@ ie\lyit\ccr\model\entities\CourseContents.class
 ie\lyit\ccr\model\entities\UserRoles.class
 ie\lyit\ccr\util\Image.class
 ie\lyit\ccr\dao\CourseDAO.class
+ie\lyit\ccr\control\CourseMB.class
 ie\lyit\ccr\util\PetHelpDataStoreSingleton.class
 ie\lyit\ccr\control\filter\CompressServletFilter.class
 ie\lyit\ccr\dao\UserDAO.class

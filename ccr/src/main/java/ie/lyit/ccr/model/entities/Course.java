@@ -43,7 +43,7 @@ public class Course implements Serializable {
 	private String userName;
 	private Boolean mating;
 
-	private String petType;
+	private String certType;
 
 	private String comments;
 
@@ -146,12 +146,12 @@ public class Course implements Serializable {
 		this.mating = mating;
 	}
 
-	public String getPetType() {
-		return petType;
+	public String getCertType() {
+		return certType;
 	}
 
-	public void setPetType(String petType) {
-		this.petType = petType;
+	public void setCertType(String certType) {
+		this.certType = certType;
 	}
 
 	public String getGender() {

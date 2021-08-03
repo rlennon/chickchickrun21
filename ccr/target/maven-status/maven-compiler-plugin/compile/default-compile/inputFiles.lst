@@ -10,7 +10,6 @@ C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\util\Image.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\model\entities\Users.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control\UserRolesMB.java
-C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control\CertificateMB.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\model\entities\UserRoles.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control\listeners\CcrServletContextListener.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\model\entities\UserSkills.java
@@ -20,6 +19,7 @@ C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control\ImageServlet.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\util\PetTypeConstants.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\util\CcrConstants.java
+C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\util\HibernateUtil.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control\TagCloudMB.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control\filter\GZIPContentEncodingFilter.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\model\entities\User.java
@@ -27,6 +27,7 @@ C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control\filter\CompressServletFilter.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control\MenuBarMB.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\util\PetHelpLocalizedMessageHelper.java
+C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control\CourseMB.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\model\entities\Course.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\model\entities\CourseContents.java
 C:\chickchickrun21-rlennon\chickchickrun21\ccr\src\main\java\ie\lyit\ccr\control\Registration.java

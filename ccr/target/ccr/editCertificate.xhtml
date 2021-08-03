@@ -10,38 +10,34 @@
                  xmlns:o="http://omnifaces.org/ui"
                  >
 
-
-
-
-
     <table>
 
         <tr align="center">
             <td>
-                <h:form enctype="multipart/form-data" id="petForm">
+                <h:form enctype="multipart/form-data" id="courseForm">
                     <p:growl id="messages"/>
 
                     <o:importConstants type="ie.lyit.ccr.util.CcrConstants" />
 
-                    <p:panelGrid id="petPanelGrid" columns="3" rendered="true" style="width:940px; min-width:940px; max-width:940px;">
+                    <p:panelGrid id="coursePanelGrid" columns="3" rendered="true" style="width:940px; min-width:940px; max-width:940px;">
 
                         <f:facet name="header">
-                            #{msg.addPet}
+                            #{msg.addCertificate}
                         </f:facet>
 
-                        <h:outputLabel for="petType" value="#{msg.petType}"/>
-                        <p:selectOneMenu id="petType" value="#{certMB.petType}" required="false">
+                        <h:outputLabel for="certType" value="#{msg.certType}"/>
+                        <p:selectOneMenu id="certType" value="#{courseMB.certType}" required="false">
                             <f:selectItem itemLabel="#{msg.dogs}" itemValue="#{PetTypeConstants.DOG_PET}" />
                             <f:selectItem itemLabel="#{msg.cats}" itemValue="#{PetTypeConstants.CAT_PET}" />
                             <f:selectItem itemLabel="#{msg.fishes}" itemValue="#{PetTypeConstants.FISH_PET}" />                          
                             <f:selectItem itemLabel="#{msg.birds}" itemValue="#{PetTypeConstants.BIRD_PET}" />
                             <f:selectItem itemLabel="#{msg.reptiles}" itemValue="#{PetTypeConstants.REPTILE_PET}" />                         
                         </p:selectOneMenu>
-                        <!--  p:message for="petType" / -->
+                        <!--  p:message for="certType" / -->
 
-                        <h:outputLabel for="petPhoto" value="#{msg.photo}"/>
-                        <p:fileUpload id="petPhoto"
-                                      fileUploadListener="#{certMB.handleFileUpload}"
+                        <h:outputLabel for="coursePhoto" value="#{msg.photo}"/>
+                        <p:fileUpload id="coursePhoto"
+                                      fileUploadListener="#{courseMB.handleFileUpload}"
                                       allowTypes="/(\.|\/)(gif|jpe?g|png)$/" auto="true"
                                       update="uploadMsg"
                                       sizeLimit="524288" fileLimit="1"
@@ -55,16 +51,16 @@
 
                         <h:outputLabel for="comments" value="#{msg.comments}" />
                         <p:inputTextarea id="comments" rows="5" cols="30" counter="counter" maxlength="200"
-                                         value="#{certMB.comments}"
+                                         value="#{courseMB.comments}"
                                          counterTemplate="{0} #{msg.charsRemaining}" autoResize="false"/>
                         <h:outputText id="counter" />
 
                     </p:panelGrid>
                     <br/>
-                    <p:commandButton ajax="false" type="submit" value="#{msg.save}" action="#{certMB.savePet()}" update="@form" />
+                    <p:commandButton ajax="false" type="submit" value="#{msg.save}" action="#{courseMB.saveCourse()}" update="@form" />
                     <p:spacer width="20" height="20"/>
                     <p:commandButton ajax="false" type="submit" immediate="true" value="#{msg.cancel}"
-                                     action="#{certMB.cancel()}" update="@form" />
+                                     action="#{courseMB.cancel()}" update="@form" />
                     <br/>
 
                 </h:form>
