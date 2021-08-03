@@ -2,7 +2,10 @@ package ie.lyit.ccr.dao;
 
 import java.util.List;
 
+import org.hibernate.SessionFactory;
+
 import ie.lyit.ccr.model.entities.Course;
+import ie.lyit.ccr.util.HibernateUtil;
 import ie.lyit.ccr.util.PetHelpDataStoreSingleton;
 
 /**
@@ -12,14 +15,15 @@ import ie.lyit.ccr.util.PetHelpDataStoreSingleton;
 public class CourseDAO {
 
 	private static PetHelpDataStoreSingleton singleton = PetHelpDataStoreSingleton.getInstance();
+	private SessionFactory sessionFactory = null;
 
 	public CourseDAO() {
-
+		sessionFactory = HibernateUtil.getSessionFactory();
 	}
 
-	public boolean updatePet(Course toUpdate) {
+	public boolean updateCourse(Course toUpdate) {
 		if (toUpdate != null) {
-			boolean wasUpdated = this.updatePet(toUpdate);
+			boolean wasUpdated = this.updateCourse(toUpdate);
 			if (wasUpdated) {
 				return true;
 			} else {
@@ -29,40 +33,40 @@ public class CourseDAO {
 		return false;
 	}
 
-	public boolean createPet(Course newPet) {
-		if (newPet != null) {
+	public boolean createCourse(Course newCourse) {
+		if (newCourse != null) {
 
 			return true;
 		}
 		return false;
 	}
 
-	public boolean deletePet(Course toDelete) {
+	public boolean deleteCourse(Course toDelete) {
 		if (toDelete != null) {
 			return true;
 		}
 		return false;
 	}
 
-	public Course findPet(Course toFind) {
+	public Course findCourse(Course toFind) {
 		if (toFind != null) {
 			return null;
 		}
 		return null;
 	}
 
-	public Course findPetById(String id) {
+	public Course findCourseById(String id) {
 		if (id != null) {
 			return null;
 		}
 		return null;
 	}
 
-	public List<Course> findAllPets() {
+	public List<Course> findAllCourses() {
 		return null;
 	}
 
-	public List<Course> findMyOwnPets(String userName) {
+	public List<Course> findMyOwnCourses(String userName) {
 
 		if (userName != null) {
 			return null;
