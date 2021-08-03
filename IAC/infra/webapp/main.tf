@@ -32,12 +32,20 @@ resource "azurerm_app_service" "webapp" {
   tags = {}
 
   auth_settings {
-    additional_login_params        = {}
-    allowed_external_redirect_urls = []
-    enabled                        = false
-    token_refresh_extension_hours  = 0
-    token_store_enabled            = false
-  }
+        additional_login_params        = {}
+        allowed_external_redirect_urls = []
+        enabled                        = true
+        issuer                         = "https://sts.windows.net/1617e123-e7d5-4f4e-9678-f24957cc153a/v2.0"
+        runtime_version                = "~1"
+        token_refresh_extension_hours  = 0
+        token_store_enabled            = true
+        unauthenticated_client_action  = "RedirectToLoginPage"
+
+        active_directory {
+            allowed_audiences = []
+            client_id         = "a1e59cfe-6967-4400-8391-adce0cb84eed"
+        }
+    }
 
   site_config {
     always_on = true
