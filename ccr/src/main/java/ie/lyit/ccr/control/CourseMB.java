@@ -78,12 +78,10 @@ public class CourseMB implements Serializable {
 		HttpServletRequest httpServletRequest = (HttpServletRequest) FacesContext.getCurrentInstance()
 				.getExternalContext().getRequest();
 		String currUserName = httpServletRequest.getUserPrincipal().getName();
-		myCollectionCourses = null;
 		myCollectionCourses = courseDAO.findMyOwnCourses(currUserName);
-		for (Object obj : myCollectionCourses) {
-			Course currCourse = (Course) obj;
+		for (Course course : myCollectionCourses) {
 			// build photos
-			currCourse.buildPhotoImage();
+			course.buildPhotoImage();
 		}
 		return CcrConstants.MY_CERTIFICATES;
 	}
