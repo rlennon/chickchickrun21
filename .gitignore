@@ -2,7 +2,8 @@
 *.class
 
 # Exclude files in the maven target directory
-/ccr/target/**
+ccr/target
+ccr/.idea
 
 # Local .terraform directories
 **/.terraform/*
