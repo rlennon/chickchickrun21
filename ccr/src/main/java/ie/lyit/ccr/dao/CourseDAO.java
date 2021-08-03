@@ -1,9 +1,15 @@
 package ie.lyit.ccr.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
 import ie.lyit.ccr.model.entities.Course;
-import ie.lyit.ccr.util.PetHelpDataStoreSingleton;
+import ie.lyit.ccr.util.HibernateUtil;
+
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -11,62 +17,54 @@ import ie.lyit.ccr.util.PetHelpDataStoreSingleton;
  */
 public class CourseDAO {
 
-	private static PetHelpDataStoreSingleton singleton = PetHelpDataStoreSingleton.getInstance();
+	private SessionFactory sessionFactory;
+	private EntityManager entityManager;
 
 	public CourseDAO() {
-
+		sessionFactory = HibernateUtil.getSessionFactory();
 	}
 
-	public boolean updatePet(Course toUpdate) {
-		if (toUpdate != null) {
-			boolean wasUpdated = this.updatePet(toUpdate);
-			if (wasUpdated) {
-				return true;
-			} else {
-				return false;
-			}
+	public boolean updateCourse(Course toUpdate) {
+		if (toUpdate == null) {
+			return false;
 		}
-		return false;
+		entityManager.getTransaction().begin();
+		entityManager.merge(toUpdate);
+		entityManager.getTransaction().commit();
+		return true;
 	}
 
-	public boolean createPet(Course newPet) {
-		if (newPet != null) {
-
-			return true;
+	public boolean createCourse(Course newCourse) {
+		if (newCourse == null) {
+			return false;
 		}
-		return false;
-	}
-
-	public boolean deletePet(Course toDelete) {
-		if (toDelete != null) {
-			return true;
+		Session session = sessionFactory.getCurrentSession();
+		Serializable id = session.save(newCourse);
+		if (id == null) {
+			return false;
 		}
-		return false;
+		return true;
 	}
 
-	public Course findPet(Course toFind) {
-		if (toFind != null) {
-			return null;
-		}
-		return null;
+	public boolean deleteCourse(Course toDelete) {
+		throw new RuntimeException("not implemented");
 	}
 
-	public Course findPetById(String id) {
-		if (id != null) {
-			return null;
-		}
-		return null;
+	public Course findCourse(Course toFind) {
+		throw new RuntimeException("not implemented");
 	}
 
-	public List<Course> findAllPets() {
-		return null;
+	public Course findCourseById(Long id) {
+		return entityManager.find(Course.class, new Long(id));
 	}
 
-	public List<Course> findMyOwnPets(String userName) {
+	public List<Course> findAllCourses() {
+		List<Course> courses = entityManager.createQuery("SELECT * from courses")
+				.getResultList();
+		return courses;
+	}
 
-		if (userName != null) {
-			return null;
-		}
-		return null;
+	public List<Course> findMyOwnCourses(String userName) {
+		throw new RuntimeException("not implemented");
 	}
 }

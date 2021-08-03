@@ -1,9 +1,13 @@
-DROP TABLE `UserCourses`;
-DROP TABLE `CourseContents`;
-DROP TABLE `Courses`;
-DROP TABLE `UserSkills`;
-DROP TABLE `Skills`;
-DROP TABLE `Users`;
+--CREATE DATABASE ccr;
+
+--USE ccr;
+
+-- DROP TABLE `UserCourses`;
+-- DROP TABLE `CourseContents`;
+-- DROP TABLE `Courses`;
+-- DROP TABLE `UserSkills`;
+-- DROP TABLE `Skills`;
+-- DROP TABLE `Users`;
 
 
 CREATE TABLE `Users` (
@@ -37,6 +41,7 @@ CREATE TABLE `UserCourses` (
 	`course_id` INT NOT NULL,
 	`started_at` DATETIME NOT NULL,
 	`completed_at` DATETIME NULL,
+	`certificate` BLOB,
 	PRIMARY KEY (`user_id`,`course_id`)
 );
 

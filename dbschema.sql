@@ -1,3 +1,14 @@
+--CREATE DATABASE ccr;
+
+--USE ccr;
+
+-- DROP TABLE `UserCourses`;
+-- DROP TABLE `CourseContents`;
+-- DROP TABLE `Courses`;
+-- DROP TABLE `UserSkills`;
+-- DROP TABLE `Skills`;
+-- DROP TABLE `Users`;
+
 CREATE TABLE `Users` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`email` VARCHAR(255) NOT NULL,

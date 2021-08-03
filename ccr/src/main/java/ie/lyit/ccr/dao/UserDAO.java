@@ -3,16 +3,12 @@ package ie.lyit.ccr.dao;
 import java.util.List;
 
 import ie.lyit.ccr.model.entities.User;
-import ie.lyit.ccr.util.PetHelpDataStoreSingleton;
 
 /**
  *
  * @author juarezjunior
  */
 public class UserDAO {
-
-	private static PetHelpDataStoreSingleton singleton = PetHelpDataStoreSingleton.getInstance();
-
 	public UserDAO() {
 
 	}
