@@ -21,6 +21,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+    - name: Test with Maven
+      run: mvn -B test --file ccr/pom.xml
     - name: Build with Maven
       run: mvn -B clean --file ccr/pom.xml; mvn -B package --file ccr/pom.xml
-      #run: mvn -B package --file ccr/pom.xml
