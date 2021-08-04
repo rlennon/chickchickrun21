@@ -1,12 +1,25 @@
 package ie.lyit.ccr.model.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
+
+import org.hibernate.annotations.GenericGenerator;
+
+
+/***
+ * 
+ * @author juarezjunior
+ *
+ */
 
 @Entity
 @Table(name = "users")
-public class Users {
-    @Id
-    @Column(name = "id")
+public class Users implements Serializable {
+	@Id
+	@GenericGenerator(name="gen",strategy="increment")
+	@GeneratedValue(generator="gen")
+	@Column(name = "id", unique = true, nullable = false) 
     private Integer id;
 
     @Id

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="ccr">
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.password">DnLKWNxczX6tEbBmCTpk</property>
+		<property name="hibernate.connection.url">jdbc:mysql://ccr21mysqlsrv.mysql.database.azure.com:3306/ccr?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=true&amp;requireSSL=false</property>
+		<property name="hibernate.connection.username">sa4mysql@ccr21mysqlsrv</property>
+		<property name="hibernate.default_schema">ccr</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+		
+	</session-factory>
+</hibernate-configuration>
+		
+<!--
+<hibernate-configuration>
+	<session-factory name="ccr">
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.password">JUJR*mysql21</property>
+		<property name="hibernate.connection.url">jdbc:mysql://172.23.192.1:3306/ccr?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=true&amp;requireSSL=false</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.default_schema">ccr</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+		
+	</session-factory>
+</hibernate-configuration>
+-->

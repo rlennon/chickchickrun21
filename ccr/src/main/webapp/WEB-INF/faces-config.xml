@@ -29,6 +29,11 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
+		<managed-bean-name>certMB</managed-bean-name>
+		<managed-bean-class>ie.lyit.ccr.control.CertificateMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
 		<managed-bean-name>courseMB</managed-bean-name>
 		<managed-bean-class>ie.lyit.ccr.control.CourseMB</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
@@ -50,7 +55,7 @@
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>userMB</managed-bean-name>
-		<managed-bean-class>ie.lyit.ccr.control.UserMB</managed-bean-class>
+		<managed-bean-class>ie.lyit.ccr.control.UsersMB</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>

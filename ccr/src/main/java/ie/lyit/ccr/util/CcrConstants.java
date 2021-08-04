@@ -10,13 +10,17 @@ public class CcrConstants {
 	
 	//JSF PAGES
 	public static final String MAIN = "main.xhtml";
-	public static final String ADD_PET = "addPet.xhtml";
+	public static final String ADD_PET = "addCertificate.xhtml";
+	public static final String ADD_COURSE = "addCourse.xhtml";
+	public static final String ADD_USER = "addUser.xhtml";
+	public static final String COURSE_DETAILS = "courseDetails.xhtml";
+	public static final String USERS_DETAILS = "users.xhtml";
+	
 	public static final String MY_CERTIFICATES = "myCertificates.xhtml";
 	public static final String ADD_PET_SHOP = "addPetShop.xhtml";
 	public static final String SEARCH_RESULTS = "searchResults.xhtml";
 	public static final String EDIT_USER = "editUser.xhtml";
-	public static final String ADD_VETERINARY = "addVeterinary.xhtml";
-	
+	public static final String ADD_VETERINARY = "addVeterinary.xhtml";	
 	
 	public static final String RESOURCE_BUNDLE_BASE_NAME = "/messages";	    
     public static final String MONGO_CLIENT = "MONGO_CLIENT";

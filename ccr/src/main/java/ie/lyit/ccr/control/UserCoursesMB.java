@@ -1,13 +1,14 @@
 package ie.lyit.ccr.control;
 
-import ie.lyit.ccr.model.entities.UserCourses;
-
-import javax.annotation.ManagedBean;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+
+import javax.annotation.ManagedBean;
+import javax.enterprise.context.SessionScoped;
+
+import ie.lyit.ccr.model.entities.UserCourses;
 
 /**
  *

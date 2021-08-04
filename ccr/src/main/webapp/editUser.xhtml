@@ -8,60 +8,44 @@
                  xmlns:fn="http://java.sun.com/jsp/jstl/functions"
                  >
 
-    <h:head>     
-        <title>            
-            #{msg.welcome}
-        </title>        
-    </h:head> 
-
-    <h:body>
-
-        <table>
-
-            <tr align="center">
-                <td>
-                    <ui:include src="./search.xhtml" />
-                </td>
-            </tr>
-
-            <tr align="center">
-                <td>
-                    <ui:include src="./menubar.xhtml" />
-                </td>
-            </tr>
-            <tr align="center">
-                <td>
-                    <ui:include src="./editProfile.xhtml" />
-                </td>
-            </tr>
 
 
-            <tr>
-                <td>
-                    <p:separator id="separator"/> 
-                </td>
-            </tr>
+    <table>                       
 
-            <tr align="center">                
-                <td>                      
-                    <p:tagCloud model="#{tagCloudMB.model}" style="width:940px;height:130px"/>   
-                </td>
-            </tr>
+        <tr align="center">
+            <td>
+                <h:form>   
 
-            <tr>
-                <td>
-                    <p:separator id="separator2"/> 
-                </td>
-            </tr>
+                    <p:panelGrid columns="3" rendered="true" style="width:940px; min-width:940px; max-width:940px;">  
 
-            <tr align="center">                
-                <td>
-                    <ui:include src="./bottom.xhtml" />
-                </td>
-            </tr>
+                        <f:facet name="header">  
+                            #{msg.addUser} 
+                        </f:facet>  
 
-        </table>  
-    </h:body> 
+                        <h:outputLabel for="email" value="#{msg.email}" />  
+                        <p:inputText id="email" value="#{userMB.email}" label="#{msg.email}"  required="true"/> 
+                        <p:message for="email" />                          
+
+                        <h:outputLabel for="passwordHash" value="#{msg.password}" />  
+                        <p:inputText id="passwordHash" value="#{userMB.passwordHash}" label="#{msg.password}"  required="true"/> 
+                        <p:message for="passwordHash" />  
+
+                    </p:panelGrid>  
+
+                    <br/>
+
+                    <p:commandButton ajax="false" type="submit" value="#{msg.save}" action="#{userMB.saveUser()}" update="@form" />                   
+                    <p:spacer width="20" height="20"/>         
+                    <p:commandButton ajax="false" type="submit" immediate="true" value="#{msg.cancel}" action="#{userMB.cancel()}" update="@form" />                   
+                    <br/>
+                    <br />
+
+
+                </h:form>   
+            </td>
+        </tr>
+    </table>     
+
 
 
 </ui:composition>

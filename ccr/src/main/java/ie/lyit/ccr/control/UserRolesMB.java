@@ -50,29 +50,18 @@ public class UserRolesMB implements Serializable {
 	public String saveUserRoles() {
 
 		logger.log(Level.INFO, "saveUserRoles method called...");
-
-		UserRoles newUserRole = new UserRoles();
-		// TODO - implement association...
-		newUserRole.setUserName("juarez.barbosa@gmail.com");
-
+		UserRoles newUserRole = new UserRoles();	
+		newUserRole.setUserName("l00162879@student.lyit.ie");
 		boolean created = new UserRolesDAO().createUserRoles(newUserRole);
-
-		
-
-	
-
 		return CcrConstants.MAIN;
 	}
 
 	@Override
-	protected void finalize() throws Throwable {
-
-	
+	protected void finalize() throws Throwable {	
 	}
 
 	@PreDestroy
-	public void releaseResources() {
-	
+	public void releaseResources() {	
 	}
 
 	/**

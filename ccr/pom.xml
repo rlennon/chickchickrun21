@@ -63,15 +63,13 @@
 			<artifactId>tomcat-annotations-api</artifactId>
 			<version>9.0.0.M10</version>
 		</dependency>
-
-		<!-- TODO - review this one -->
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
 		</dependency>
 
-		<!-- new morphia dependencies - ok -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -84,8 +82,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
-
-		<!-- LOC issues -->
+		<!-- Apache Jakarta Commons -->
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
@@ -116,15 +113,12 @@
 			<version>1.1.3</version>
 		</dependency>
 
-		<!-- compass - ok -->
 		<dependency>
 			<groupId>org.compass-project</groupId>
 			<artifactId>compass</artifactId>
 			<version>2.2.0</version>
 		</dependency>
 
-
-		<!-- LOC issues -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>fluent-hc</artifactId>
@@ -154,9 +148,6 @@
 			<artifactId>httpmime</artifactId>
 			<version>4.3.1</version>
 		</dependency>
-
-
-		<!-- TODO - confirm lucene version - check compass dist directory -->
 
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
@@ -194,19 +185,11 @@
 			<version>2.4.1</version>
 		</dependency>
 
-		<!-- updated March 2019 -->
-
-
-		<!-- ok - but TODO - keep just one driver file -->
-
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongodb-driver</artifactId>
 			<version>3.3.0</version>
-		</dependency>
-
-
-		<!-- ok morphia is updated - latest java 2016 -->
+		</dependency>		
 
 		<dependency>
 			<groupId>org.mongodb.morphia</groupId>
@@ -220,14 +203,13 @@
 			<version>1.6.3</version>
 		</dependency>
 
-		<!-- TODO - upgrade PF -->
+		<!-- JSF - Primefaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>4.0</version>
 		</dependency>
-
-		<!-- TODO - confirm versions and package - try to remove glassfish -->
+	
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
@@ -275,8 +257,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>1.0.1.Final</version>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.2.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -304,6 +286,8 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			
+			<!--  Tomcat Plugin - dev time automation -->
 
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>

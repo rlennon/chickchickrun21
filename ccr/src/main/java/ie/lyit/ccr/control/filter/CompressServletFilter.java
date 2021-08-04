@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /***
  * 
- * @author juarez.junior
+ * @author juarezjunior
  *
  */
 public class CompressServletFilter implements Filter {

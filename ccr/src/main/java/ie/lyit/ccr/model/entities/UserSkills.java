@@ -1,10 +1,19 @@
 package ie.lyit.ccr.model.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
+
+
+/***
+ * 
+ * @author juarezjunior
+ *
+ */
 
 @Entity
 @Table(name = "userskills")
-public class UserSkills {
+public class UserSkills implements Serializable {
     @Id
     @Column(name = "user_id")
     private Integer userId;

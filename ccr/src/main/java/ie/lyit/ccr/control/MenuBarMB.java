@@ -40,7 +40,7 @@ public class MenuBarMB implements Serializable {
 	}
 
 	public String logout() {
-		//addMessage(bundle.getString("logoff.message"));
+	
 		addMessage("Logging Off...");
 		HttpSession httpSession = (HttpSession) FacesContext
 				.getCurrentInstance().getExternalContext().getSession(false);
@@ -61,7 +61,7 @@ public class MenuBarMB implements Serializable {
 						ex.getLocalizedMessage(), ex);
 			}
 		}
-		// TODO - PAY ATTENTION HERE...DO NOT CHANGE IT
+
 		return null;
 	}
 
@@ -70,7 +70,7 @@ public class MenuBarMB implements Serializable {
 				.getCurrentInstance().getExternalContext().getSession(false);
 		httpSession.setAttribute(
 				CcrConstants.SHOW_WELCOME_NOTIFICATION_BAR, "false");
-		// remain in same page
+
 		return CcrConstants.MAIN;
 	}
 

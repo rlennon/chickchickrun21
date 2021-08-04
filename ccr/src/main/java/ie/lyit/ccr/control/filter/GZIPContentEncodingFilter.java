@@ -10,7 +10,7 @@ import javax.ws.rs.container.ContainerResponseFilter;
 
 /***
  * 
- * @author alessandrots
+ * @author juarezjunior
  *
  */
 @Priority(Priorities.HEADER_DECORATOR)
