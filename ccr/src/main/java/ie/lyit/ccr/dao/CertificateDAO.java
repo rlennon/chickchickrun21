@@ -2,24 +2,21 @@ package ie.lyit.ccr.dao;
 
 import java.util.List;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
 import ie.lyit.ccr.model.entities.Courses;
 import ie.lyit.ccr.util.HibernateUtil;
-
 
 /**
  *
  * @author juarezjunior
  */
-public class CourseDAO {
+public class CertificateDAO {
 
-
+	
 	private SessionFactory sessionFactory = null;
 
-	public CourseDAO() {
+	public CertificateDAO() {
 		sessionFactory = HibernateUtil.getSessionFactory();
 	}
 
@@ -37,12 +34,7 @@ public class CourseDAO {
 
 	public boolean createCourse(Courses newCourse) {
 		if (newCourse != null) {
-			
-			Session session = sessionFactory.openSession();
-			Transaction txn = session.beginTransaction();
-			session.save(newCourse);
-			session.flush();
-			txn.commit();
+
 			return true;
 		}
 		return false;
@@ -70,15 +62,7 @@ public class CourseDAO {
 	}
 
 	public List<Courses> findAllCourses() {
-		
-		Session session = sessionFactory.openSession();
-		Transaction txn = session.beginTransaction();		
-		List<Courses> courses = 
-		session.createQuery("SELECT c FROM Courses c", Courses.class).getResultList();			
-		session.flush();
-		txn.commit();		
-		return courses;
-
+		return null;
 	}
 
 	public List<Courses> findMyOwnCourses(String userName) {

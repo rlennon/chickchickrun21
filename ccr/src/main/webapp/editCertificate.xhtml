@@ -14,7 +14,7 @@
 
         <tr align="center">
             <td>
-                <h:form enctype="multipart/form-data" id="courseForm">
+                <h:form enctype="multipart/form-data" id="certificateForm">
                     <p:growl id="messages"/>
 
                     <o:importConstants type="ie.lyit.ccr.util.CcrConstants" />
@@ -26,7 +26,7 @@
                         </f:facet>
 
                         <h:outputLabel for="certType" value="#{msg.certType}"/>
-                        <p:selectOneMenu id="certType" value="#{courseMB.certType}" required="false">
+                        <p:selectOneMenu id="certType" value="#{certMB.certType}" required="false">
                             <f:selectItem itemLabel="#{msg.dogs}" itemValue="#{PetTypeConstants.DOG_PET}" />
                             <f:selectItem itemLabel="#{msg.cats}" itemValue="#{PetTypeConstants.CAT_PET}" />
                             <f:selectItem itemLabel="#{msg.fishes}" itemValue="#{PetTypeConstants.FISH_PET}" />                          
@@ -37,7 +37,7 @@
 
                         <h:outputLabel for="coursePhoto" value="#{msg.photo}"/>
                         <p:fileUpload id="coursePhoto"
-                                      fileUploadListener="#{courseMB.handleFileUpload}"
+                                      fileUploadListener="#{certMB.handleFileUpload}"
                                       allowTypes="/(\.|\/)(gif|jpe?g|png)$/" auto="true"
                                       update="uploadMsg"
                                       sizeLimit="524288" fileLimit="1"
@@ -51,16 +51,16 @@
 
                         <h:outputLabel for="comments" value="#{msg.comments}" />
                         <p:inputTextarea id="comments" rows="5" cols="30" counter="counter" maxlength="200"
-                                         value="#{courseMB.comments}"
+                                         value="#{certMB.comments}"
                                          counterTemplate="{0} #{msg.charsRemaining}" autoResize="false"/>
                         <h:outputText id="counter" />
 
                     </p:panelGrid>
                     <br/>
-                    <p:commandButton ajax="false" type="submit" value="#{msg.save}" action="#{courseMB.saveCourse()}" update="@form" />
+                    <p:commandButton ajax="false" type="submit" value="#{msg.save}" action="#{certMB.saveCourse()}" update="@form" />
                     <p:spacer width="20" height="20"/>
                     <p:commandButton ajax="false" type="submit" immediate="true" value="#{msg.cancel}"
-                                     action="#{courseMB.cancel()}" update="@form" />
+                                     action="#{certMB.cancel()}" update="@form" />
                     <br/>
 
                 </h:form>

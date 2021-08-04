@@ -8,7 +8,7 @@ import javax.servlet.ServletOutputStream;
 
 /***
  * 
- * @author alessandrots
+ * @author juarezjunior
  *
  */
 public class GZipServletOutputStream extends ServletOutputStream {

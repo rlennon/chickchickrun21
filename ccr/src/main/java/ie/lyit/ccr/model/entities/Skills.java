@@ -1,5 +1,7 @@
 package ie.lyit.ccr.model.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,11 +10,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
+/***
+ * 
+ * @author juarezjunior
+ *
+ */
+
 @Entity
 @Table(name = "skills")
-public class Skills {
-    @Id
-    @Column(name = "id")
+public class Skills implements Serializable {
+	@Id
+	@GenericGenerator(name="gen",strategy="increment")
+	@GeneratedValue(generator="gen")
+	@Column(name = "id", unique = true, nullable = false) 
     private Integer id;
 
     @Column(name = "name")

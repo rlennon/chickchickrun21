@@ -4,7 +4,7 @@ package ie.lyit.ccr.util;
  *
  * @author juarezjunior
  */
-public class PetTypeConstants {
+public class CCRTypeConstants {
 
     public static final String DOG_PET = "dogPet";
     public static final String CAT_PET = "catPet";

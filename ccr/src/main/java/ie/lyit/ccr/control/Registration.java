@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ie.lyit.ccr.dao.UserDAO;
+import ie.lyit.ccr.dao.UsersDAO;
 import ie.lyit.ccr.dao.UserRolesDAO;
-import ie.lyit.ccr.model.entities.User;
+import ie.lyit.ccr.model.entities.Users;
 import ie.lyit.ccr.model.entities.UserRoles;
 import ie.lyit.ccr.util.CcrConstants;
 
@@ -23,7 +23,7 @@ import ie.lyit.ccr.util.CcrConstants;
 public class Registration extends HttpServlet {
 
 	private Logger logger = Logger.getLogger(Registration.class.getName());
-	private UserDAO userDAO;
+	private UsersDAO userDAO;
 	private UserRolesDAO userRolesDAO;
 
 	@Override
@@ -31,7 +31,7 @@ public class Registration extends HttpServlet {
 		super.init(config);
 		
 		if (userDAO == null) {
-			userDAO = new UserDAO();
+			userDAO = new UsersDAO();
 		}
 		if (userRolesDAO == null) {
 			userRolesDAO = new UserRolesDAO();
@@ -39,7 +39,7 @@ public class Registration extends HttpServlet {
 	}
 
 	
-	private User searchResultsUser;
+	private Users searchResultsUser;
 
 	protected void processRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -62,32 +62,17 @@ public class Registration extends HttpServlet {
 			if (!password.equalsIgnoreCase(passwordConfirmation)) {
 				throw new ServletException("Password does not match!");
 			}
-			// null it so that it does not go plain to MongoDB...
+	
 			passwordConfirmation = null;
 			emailConfirmation = null;
-
-			User newUser = new User();
-			// set @Id
-			newUser.setUserName(userName);
-			newUser.setName(name);
-			newUser.setSurName(surName);
-			newUser.setEmail(email);
-
-			//password = new String(Utils.cryptPassword(password.toCharArray()));
-			newUser.setPassword(password);
-
-			newUser.setGender(gender);
-			// TODO - define definitive solution
-			java.sql.Date birth = new java.sql.Date(System.currentTimeMillis());
-			newUser.setBirthDate(birth);
-
-			// first, save User it to MongoDB database...
+			Users newUser = new Users();			
+			newUser.setEmail(email);			
+			newUser.setPasswordHash(password);	
 			if (userDAO == null) {
-				userDAO = new UserDAO();
+				userDAO = new UsersDAO();
 			}
 			boolean userCreated = this.userDAO.createUser(newUser);
 
-			// then, create and save UserRoles = user to MongoDB...
 			UserRoles newRole = new UserRoles();
 			newRole.setRoleName(CcrConstants.USER_ROLE);
 			newRole.setUserName(userName);
@@ -97,19 +82,7 @@ public class Registration extends HttpServlet {
 			}
 			boolean userRoleCreated = this.userRolesDAO
 					.createUserRoles(newRole);
-
-			
-			
-
-//			if (!userRoleCreated || !tx.wasCommitted() || tx.wasRolledBack()) {
-//				logger.severe(new StringBuilder(
-//						"ERROR: USER REGISTRATION FAILED! ID:").append(email)
-//						.toString());
-//			}
-
 	
-
-			// TODO - define the URL after registration
 			response.sendRedirect(request.getContextPath());
 
 		} catch (Exception ex) {
