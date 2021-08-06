@@ -1,7 +1,6 @@
 package ie.lyit.ccr.control;
 
 import java.io.Serializable;
-import java.util.logging.Logger;
 
 import javax.annotation.ManagedBean;
 import javax.enterprise.context.RequestScoped;
@@ -9,9 +8,6 @@ import javax.enterprise.context.RequestScoped;
 //import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
-
-
-
 
 import ie.lyit.ccr.util.CcrConstants;
 
@@ -22,8 +18,6 @@ import ie.lyit.ccr.util.CcrConstants;
 @ManagedBean("searchMB")
 @RequestScoped
 public class SearchMB implements Serializable {
-
-//    private static Logger logger = Logger.getLogger(PostMB.class.getName());
 
  
     private ServletContext servletContext;

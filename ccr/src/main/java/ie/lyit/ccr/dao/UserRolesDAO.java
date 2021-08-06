@@ -2,9 +2,8 @@ package ie.lyit.ccr.dao;
 
 import java.util.List;
 
-import ie.lyit.ccr.model.entities.User;
+import ie.lyit.ccr.model.entities.Users;
 import ie.lyit.ccr.model.entities.UserRoles;
-import ie.lyit.ccr.util.PetHelpDataStoreSingleton;
 
 /**
  *
@@ -12,10 +11,7 @@ import ie.lyit.ccr.util.PetHelpDataStoreSingleton;
  */
 public class UserRolesDAO {
 
-	private static PetHelpDataStoreSingleton singleton = PetHelpDataStoreSingleton.getInstance();
-
 	public UserRolesDAO() {
-
 	}
 
 	public boolean updateUserRoles(UserRoles toUpdate) {

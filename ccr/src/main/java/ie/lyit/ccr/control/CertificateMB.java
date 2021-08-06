@@ -1,23 +1,23 @@
 package ie.lyit.ccr.control;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.annotation.ManagedBean;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
-
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.omnifaces.util.Messages;
+import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
 
-import ie.lyit.ccr.dao.CourseDAO;
+import ie.lyit.ccr.dao.CertificateDAO;
 import ie.lyit.ccr.model.entities.Courses;
 import ie.lyit.ccr.util.CcrConstants;
 
@@ -25,20 +25,16 @@ import ie.lyit.ccr.util.CcrConstants;
  *
  * @author juarezjunior
  */
-@ManagedBean("courseMB")
+@ManagedBean("certMB")
 @SessionScoped
-public class CourseMB implements Serializable {
+public class CertificateMB implements Serializable {
 
 	private static final Logger logger = Logger.getLogger(CertificateMB.class.getName());
 
 	private ServletContext servletContext;
-	private Integer id;
-	private String name;
-	private Timestamp createdAt;
-	private Timestamp updatedAt;
-	private Integer skillId;
-	private String description;
+
 	private String certType;
+
 	private String comments;
 	private byte[] photoBytes;
 	private UploadedFile uploaded;
@@ -46,44 +42,66 @@ public class CourseMB implements Serializable {
 	private String photoName;
 	private String photoContentType;
 
-	private List<Courses> courses;
-	private CourseDAO courseDAO;
+	private CertificateDAO courseDAO;
 
-	public CourseMB() {
+	public CertificateMB() {
 		super();
 		servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
 
 		if (courseDAO == null) {
-			courseDAO = new CourseDAO();
+			courseDAO = new CertificateDAO();
 		}
-		init();
-	}
-
-	public void init() {
-		courses = courseDAO.findAllCourses();
 	}
 
 	public String cancel() {
 		return CcrConstants.MAIN;
 	}
 
-	public String loadMyCourses() {
-		courses = courseDAO.findAllCourses();
-		return CcrConstants.COURSE_DETAILS;
+	public String loadMyCertificates() {
+		HttpServletRequest httpServletRequest = (HttpServletRequest) FacesContext.getCurrentInstance()
+				.getExternalContext().getRequest();
+//		String currUserName = httpServletRequest.getUserPrincipal().getName();
+//		myCollectionCourses = null;
+//		myCollectionCourses = courseDAO.findMyOwnCourses(currUserName);
+//		for (Object obj : myCollectionCourses) {
+//			Course currCourse = (Course) obj;
+//			// build photos
+//			currCourse.buildPhotoImage();
+//		}
+		return CcrConstants.MY_CERTIFICATES;
+	}
+
+	public void handleFileUpload(FileUploadEvent event) {
+		uploaded = event.getFile();
+		try {
+			photoInputStream = uploaded.getInputstream();
+			int available = getPhotoInputStream().available();
+			photoBytes = new byte[available];
+			int read = getPhotoInputStream().read(photoBytes, 0, available);
+			this.photoContentType = uploaded.getContentType();
+			this.photoName = getUploaded().getFileName();
+			logger.log(Level.INFO, "File name: " + getUploaded().getFileName());
+			logger.log(Level.INFO, "File photoInputStream contents: " + uploaded.getInputstream().available());
+			logger.log(Level.INFO, "File Content Type: " + uploaded.getContentType());
+			logger.log(Level.INFO, "Read: " + read);
+		} catch (IOException ex) {
+			Logger.getLogger(CertificateMB.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		Messages.addInfo("certificateForm:coursePhoto", "Upload OK");
 	}
 
 	public String deleteCourse(Courses course) {
 		logger.log(Level.INFO, "deleteCourse method called...");
 		if (courseDAO == null) {
-			courseDAO = new CourseDAO();
+			courseDAO = new CertificateDAO();
 		}
 		boolean isDeleted = courseDAO.deleteCourse(course);
 		logger.log(Level.INFO, "Course deleted?: " + isDeleted);
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Course Deleted",
 				"Course Deleted: " + isDeleted);
 		FacesContext.getCurrentInstance().addMessage(null, message);
-
-		this.loadMyCourses();
+		// reloads and updates course list for userName...
+		this.loadMyCertificates();
 		return CcrConstants.MAIN;
 	}
 
@@ -91,22 +109,28 @@ public class CourseMB implements Serializable {
 
 		logger.log(Level.INFO, "saveCourse method called...");
 
-		Courses newCourse = new Courses();
+		// Course newCourse = new Course();
 
-		newCourse.setName(name);
-		newCourse.setDescription(description);
-		newCourse.setSkillId(Integer.valueOf(5));
-		newCourse.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-		newCourse.setUpdatedAt(new Timestamp(System.currentTimeMillis()));
+//		try {
+//			BeanUtils.copyProperties(newCourse, this);
+//		} catch (IllegalAccessException ex) {
+//			logger.log(Level.SEVERE, null, ex);
+//		} catch (InvocationTargetException ex) {
+//			logger.log(Level.SEVERE, null, ex);
+//		}
+//		HttpServletRequest httpServletRequest = (HttpServletRequest) FacesContext.getCurrentInstance()
+//				.getExternalContext().getRequest();
+//		String currentUser = httpServletRequest.getUserPrincipal().getName();
+//		newCourse.setUserName(currentUser);
+//
+//		boolean created = false;
+//		if (courseDAO == null) {
+//			courseDAO = new CourseDAO();
+//		}
+//		created = courseDAO.createCourse(newCourse);
 
-		if (courseDAO == null) {
-			courseDAO = new CourseDAO();
-		}
-
-		courseDAO.createCourse(newCourse);
-
-		Messages.addInfo("certificateForm:coursePanelGrid", "Course added succesfully!");
-		return CcrConstants.ADD_COURSE;
+		Messages.addInfo("certificateForm:coursePanelGrid", "Certificate created succesfully!");
+		return CcrConstants.ADD_PET;
 	}
 
 	/**
@@ -121,34 +145,6 @@ public class CourseMB implements Serializable {
 	 */
 	public void setCertType(String certType) {
 		this.certType = certType;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public Integer getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	/**
@@ -221,8 +217,6 @@ public class CourseMB implements Serializable {
 		this.photoName = photoName;
 	}
 
-
-
 	/**
 	 * @return the photoInputStream
 	 */
@@ -237,10 +231,6 @@ public class CourseMB implements Serializable {
 		this.photoInputStream = photoInputStream;
 	}
 
-
-
-
-
 	public ServletContext getServletContext() {
 		return servletContext;
 	}
@@ -249,56 +239,15 @@ public class CourseMB implements Serializable {
 		this.servletContext = servletContext;
 	}
 
-	public CourseDAO getCourseDAO() {
+	public CertificateDAO getCertificateDAO() {
 		return courseDAO;
 	}
 
-	public void setCourseDAO(CourseDAO courseDAO) {
+	public void setCertificateDAO(CertificateDAO courseDAO) {
 		this.courseDAO = courseDAO;
 	}
 
 	public static Logger getLogger() {
 		return logger;
 	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public java.sql.Timestamp getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(java.sql.Timestamp createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public java.sql.Timestamp getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(java.sql.Timestamp updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
-	public Integer getSkillId() {
-		return skillId;
-	}
-
-	public void setSkillId(Integer skillId) {
-		this.skillId = skillId;
-	}
-
-	public List<Courses> getCourses() {
-		return courses;
-	}
-
-	public void setCourses(List<Courses> courses) {
-		this.courses = courses;
-	}
-
 }

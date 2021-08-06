@@ -227,4 +227,4 @@ Main branch, and a new release for production is made.
 
 The teams team's velocity is calculated by using Poker Planner
 
-The teams current story point velocity is "<Choose the number!>".
+The teams current story point velocity is "<Choose the number!>"

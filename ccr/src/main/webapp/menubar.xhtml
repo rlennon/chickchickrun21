@@ -16,29 +16,35 @@
             <!--  menu table row -->
             <tr>
                 <td>                        
-                    <p:menubar autoDisplay="true" id="petMenuBar" >       
+                    <p:menubar autoDisplay="true" id="ccrMenuBar" >       
 
                         <p:menuitem value="#{msg.home}" icon="ui-icon-home" url="./main.xhtml" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>
-                        
-                        <p:submenu label="#{msg.pet}" icon="ui-icon-script" style="font-family: Tahoma; font-size: 12px; font-style: bold">   
+
+                        <p:submenu label="#{msg.certificates}" icon="ui-icon-script" style="font-family: Tahoma; font-size: 12px; font-style: bold">   
 							<p:menuitem value="#{msg.itemToAdd}" icon="ui-icon-plus" url="./addCertificate.xhtml" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>
-                            <p:menuitem value="#{msg.myPets}" icon="ui-icon-contact" action="#{certMB.loadMyPets()}" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>                            
-                            <p:menuitem value="#{msg.search}" icon="ui-icon-search" url="#" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>
+                            <p:menuitem value="#{msg.myCertificates}" icon="ui-icon-contact" action="#{certMB.loadMyCertificates()}" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>                           
                             <p:separator/>                                                      
-                        </p:submenu>
-                      
+                        </p:submenu> 
+                        
+                        <p:submenu label="#{msg.users}" icon="ui-icon-person" style="font-family: Tahoma; font-size: 12px; font-style: bold">   
+							<p:menuitem value="#{msg.itemToAdd}" icon="ui-icon-plus" url="./addUser.xhtml" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>
+                           <p:menuitem value="#{msg.checkUsers}" icon="ui-icon-script"
+								url="./users.xhtml"
+								style="font-family: Tahoma; font-size: 12px; font-style: bold" />                            
+                            <p:separator/>                                                      
+                        </p:submenu>                      
 
-                        <p:menuitem value="#{msg.userCourse}" icon="ui-icon-script" url="./userCourses.xhtml" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>
-
-                        <p:menuitem value="#{msg.profile}" icon="ui-icon-person" action="#{userMB.loadUserProfile}" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>
+						<p:submenu label="#{msg.userCourse}" icon="ui-icon-script" style="font-family: Tahoma; font-size: 12px; font-style: bold">
+							<p:menuitem value="#{msg.itemToAdd}" icon="ui-icon-plus" url="./addCourse.xhtml" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>
+							<p:menuitem value="#{msg.myCourses}" icon="ui-icon-script"
+								url="./courses.xhtml"
+								style="font-family: Tahoma; font-size: 12px; font-style: bold" />
+							<p:separator/>                                                      
+                        </p:submenu>                       
 
                         <p:submenu label="#{msg.settings}" icon="ui-icon-gear" style="font-family: Tahoma; font-size: 12px; font-style: bold">
-                            <p:separator/>                               
-                            <p:menuitem value="#{msg.adverstiseHere}" icon="ui-icon-comment" url="#" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>
-                            <p:separator/>
-                            <p:menuitem value="#{msg.accountSettings}" icon="ui-icon-gear" url="#" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>
-                            <p:menuitem value="#{msg.privacySettings}" icon="ui-icon-gear" url="#" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>                                
-                            <p:separator/>                               
+                            <p:separator/>  
+                                                 
                             <p:menuitem value="#{msg.help}" icon="ui-icon-help" url="#" style="font-family: Tahoma; font-size: 12px; font-style: bold"/>
                             <p:separator/>
                             <p:menuitem value="#{msg.signout}" icon="ui-icon-close" actionListener="#{menuBarMB.logout}"  style="font-family: Tahoma; font-size: 12px; font-style: bold" ajax="false"/>

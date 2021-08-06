@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 
 import javax.faces.context.FacesContext;
 
-public class PetHelpLocalizedMessageHelper {
+public class CCRMessageHelper {
 	 
     private ResourceBundle bundle;
  

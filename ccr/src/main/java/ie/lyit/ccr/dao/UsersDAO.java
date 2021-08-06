@@ -7,25 +7,24 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import ie.lyit.ccr.model.entities.Courses;
+import ie.lyit.ccr.model.entities.Users;
 import ie.lyit.ccr.util.HibernateUtil;
-
 
 /**
  *
  * @author juarezjunior
  */
-public class CourseDAO {
-
-
+public class UsersDAO {
+	
 	private SessionFactory sessionFactory = null;
-
-	public CourseDAO() {
+	
+	public UsersDAO() {
 		sessionFactory = HibernateUtil.getSessionFactory();
 	}
 
-	public boolean updateCourse(Courses toUpdate) {
+	public boolean updateUser(Users toUpdate) {
 		if (toUpdate != null) {
-			boolean wasUpdated = this.updateCourse(toUpdate);
+			boolean wasUpdated = this.updateUser(toUpdate);
 			if (wasUpdated) {
 				return true;
 			} else {
@@ -35,12 +34,12 @@ public class CourseDAO {
 		return false;
 	}
 
-	public boolean createCourse(Courses newCourse) {
-		if (newCourse != null) {
+	public boolean createUser(Users newUser) {
+		if (newUser != null) {
 			
 			Session session = sessionFactory.openSession();
 			Transaction txn = session.beginTransaction();
-			session.save(newCourse);
+			session.save(newUser);
 			session.flush();
 			txn.commit();
 			return true;
@@ -48,44 +47,39 @@ public class CourseDAO {
 		return false;
 	}
 
-	public boolean deleteCourse(Courses toDelete) {
+	public boolean deleteUser(Users toDelete) {
 		if (toDelete != null) {
+
 			return true;
 		}
 		return false;
 	}
 
-	public Courses findCourse(Courses toFind) {
+	public Users findUser(Users toFind) {
 		if (toFind != null) {
 			return null;
 		}
 		return null;
 	}
 
-	public Courses findCourseById(String id) {
-		if (id != null) {
+	public Users findUserByUserName(String userName) {
+		if (userName != null) {
+
 			return null;
 		}
 		return null;
 	}
 
-	public List<Courses> findAllCourses() {
+	public List<Users> findAllUsers() {		
 		
 		Session session = sessionFactory.openSession();
-		Transaction txn = session.beginTransaction();		
-		List<Courses> courses = 
-		session.createQuery("SELECT c FROM Courses c", Courses.class).getResultList();			
+		Transaction txn = session.beginTransaction();
+		List<Users> users = session.createQuery("SELECT u FROM Users u", Users.class).getResultList();  	
 		session.flush();
 		txn.commit();		
-		return courses;
+		return users;
 
 	}
+	
 
-	public List<Courses> findMyOwnCourses(String userName) {
-
-		if (userName != null) {
-			return null;
-		}
-		return null;
-	}
 }

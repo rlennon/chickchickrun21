@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponseWrapper;
 
 /***
  * 
- * @author alessandrots
+ * @author juarezjunior
  *
  */
 public class GZipServletResponseWrapper extends HttpServletResponseWrapper {
@@ -24,8 +24,7 @@ public class GZipServletResponseWrapper extends HttpServletResponseWrapper {
     }
 
     public void close() throws IOException {
-        //PrintWriter.close does not throw exceptions. Thus, the call does not need
-        //be inside a try-catch block.
+   
         if (this.printWriter != null) {
             this.printWriter.close();
         }
@@ -40,12 +39,7 @@ public class GZipServletResponseWrapper extends HttpServletResponseWrapper {
      * Flush OutputStream or PrintWriter
      *
      * @throws IOException
-     */
-
-    
-    
-     
-    
+     */    
     @Override
     public void flushBuffer() throws IOException {
 
